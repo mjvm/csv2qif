@@ -6,3 +6,12 @@ home banking system to a QIF format so the it can be imported to personal
 finance systems.
 
 It was tested only on wesabe (http://www.wesabe.com/).
+
+USAGE
+-----
+
+./csv2qif.py statment.csv 
+or
+python csv2qif.py statment.csv
+
+the result will be save in a statment.qif file in the same directory as the csv file.
