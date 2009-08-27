@@ -1,0 +1,8 @@
+CSV2QIF
+=======
+
+This script converts the CSV provided by CGD (CAIXA GERAL DE DEPOSITOS)
+home banking system to a QIF format so the it can be imported to personal
+finance systems.
+
+It was tested only on wesabe (http://www.wesabe.com/).
