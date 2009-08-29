@@ -45,7 +45,7 @@ def read_csv(statement_file):
     return data
 
 def convert_qif(data, outputfile):
-    ''' writes the extracted data into a OFX file
+    ''' writes the extracted data into a QIF file
 
         Example:
         !Type:Bank
@@ -83,6 +83,8 @@ def main(statement_file):
 
     data = read_csv(statement)
     convert_qif(data, output)
+    print 'converted data saved to %s file' % \
+            (statement.name.replace('csv', 'qif'), )
 
     statement.close()
     output.close()
@@ -90,7 +92,7 @@ def main(statement_file):
 if __name__ == '__main__':
 
     if len(sys.argv) < 2:
-        print 'USAGE! blah'
+        print './cvs2qif.py statement.csv'
         sys.exit(1)
     else:
         main(sys.argv[1])

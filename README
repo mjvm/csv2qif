@@ -10,7 +10,7 @@ It was tested only on wesabe (http://www.wesabe.com/).
 USAGE
 -----
 
-./csv2qif.py statment.csv 
+./csv2qif.py statment.csv
 or
 python csv2qif.py statment.csv
 
