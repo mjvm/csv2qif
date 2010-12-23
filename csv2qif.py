@@ -22,9 +22,11 @@ def read_csv(statement_file):
     '''
     csv_reader = csv.reader(statement_file, delimiter=';')
     data = []
-    count = 0
+    header = []
+    for x in range(13):
+        header.append(csv_reader.next())
     for row in csv_reader:
-        if count > 2 and len(row):
+        if row:
             d_mov, d_val, desc, credit, debit, balance = row
             d_mov = datetime.strptime(d_mov, '%d-%m-%Y')
             credit = credit.replace('.', '')
@@ -40,8 +42,8 @@ def read_csv(statement_file):
             else:
                 debit = 0
             data.append([d_mov, desc, credit, debit, ])
-        count += 1
-
+        else:
+            break
     return data
 
 def convert_qif(data, outputfile):
