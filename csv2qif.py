@@ -24,7 +24,7 @@ def read_csv(statement_file):
     data = []
     for row in csv_reader:
         try:
-            d_mov, d_val, desc, credit, debit, balance = row
+            d_mov, d_val, desc, credit, debit = row[:5]
             d_mov = datetime.strptime(d_mov, '%d-%m-%Y')
             credit = credit.replace('.', '')
             credit = credit.replace(',', '.')
@@ -39,7 +39,7 @@ def read_csv(statement_file):
             else:
                 debit = 0
             data.append([d_mov, desc, credit, debit, ])
-        except:
+        except Exception, e:
             continue
     return data
 
